@@ -1,0 +1,137 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* main components */
+
+:root {
+  font-size: 62.5%;
+  /* colors */
+
+  --color-primary: #730039;
+  --color-modified-primary-light: hsla(330, 100%, 23%, 0.55);
+  --color-modified-primary-dark: hsla(330, 100%, 23%, 0.85);
+
+  --color-secondary: #ffc513;
+  --color-modified-secondary-light: hsla(45, 100%, 54%, 0.55);
+  --color-modified-secondary-dark: rgba(255, 196, 19, 0.85);
+
+  --color-third: #ff724c;
+  --color-modified-third-light: hsla(13, 100%, 65%, 0.55);
+  --color-modified-third-dark: rgba(255, 115, 76, 0.85);
+
+  --color-fourth: #f6eedf;
+  --color-modified-fourth-light: hsla(39, 56%, 92%, 0.55);
+  --color-modified-fourth-dark: hsla(39, 56%, 92%, 0.85);
+
+  /* transition duration */
+
+  --transition-duration: 0.3s;
+
+  /* section title font size */
+
+  --font-size-section-title: calc(2rem + 2vw);
+
+  /* font family */
+
+  --font-family-text: "Titillium Web", sans-serif;
+
+  /* section padding */
+
+  --padding-section: 8vh 3vw;
+}
+
+body {
+  font-family: var(--font-family-text);
+  line-height: 1.7;
+  background-color: var(--color-fourth);
+}
+
+/* grid system */
+
+.container {
+  display: grid;
+  grid-template-columns:
+    [container-start] 1fr [center-start] repeat(
+      10,
+      [column-start] minmax(min-content, 11rem) [column-end]
+    )
+    [center-end]
+    1fr [container-end];
+
+  grid-template-rows: 100vh repeat(8, min-content);
+}
+
+* {
+  font-size: 5rem;
+  /* just for the moment so we can visualize the content better, this will be modified in the future, the background colors will be modified as well, this is only to better understand the grid layout */
+}
+
+header#header {
+  background-color: var(--color-primary);
+  grid-column: container-start / container-end;
+}
+
+section#booking-content {
+  background-color: var(--color-secondary);
+  grid-column: center-start / column-end 6;
+}
+
+section#booking-date {
+  background-color: var(--color-third);
+  grid-column: column-start 7 / center-end;
+}
+
+section#villas {
+  background-color: var(--color-primary);
+  grid-column: container-start / container-end;
+}
+
+section#motto {
+  background-color: var(--color-secondary);
+  grid-column: container-start / container-end;
+}
+
+section#events-content {
+  background-color: var(--color-third);
+  grid-column: container-start / column-end 9;
+}
+
+section#events-title {
+  background-color: var(--color-primary);
+  grid-column: column-start 10 / center-end;
+}
+
+section#gallery-title {
+  background-color: var(--color-secondary);
+  grid-column: center-start / column-end 1;
+}
+
+section#gallery-carousel {
+  background-color: var(--color-third);
+  grid-column: column-start 2 / container-end;
+}
+
+section#features-content {
+  background-color: var(--color-primary);
+  grid-column: container-start / column-end 9;
+}
+
+section#features-title {
+  background-color: var(--color-secondary);
+  grid-column: column-start 10 / center-end;
+}
+
+section#testimonials {
+  background-color: var(--color-third);
+  grid-column: center-start / center-end;
+}
+
+footer#footer {
+  background-color: var(--color-primary);
+  grid-column: container-start / container-end;
+}
