@@ -1,0 +1,18 @@
+@media screen and (max-width: 1000px) {
+  a:link,
+  a:visited {
+    font-size: calc(1rem + 1vw);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header-text-paragaph {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header-text-title {
+    font-size: calc(3rem + 4vw);
+  }
+}

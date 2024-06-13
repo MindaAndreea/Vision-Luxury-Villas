@@ -1,0 +1,6 @@
+/* Footer: */
+
+footer#footer {
+  background-color: var(--color-primary);
+  grid-column: container-start / container-end;
+}

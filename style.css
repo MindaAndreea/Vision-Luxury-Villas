@@ -94,62 +94,134 @@ i {
   grid-template-rows: 100vh repeat(8, min-content);
 }
 
+/* Booking Content Section: */
+
 section#booking-content {
-  background-color: var(--color-secondary);
   grid-column: center-start / column-end 6;
+  padding: var(--padding-section);
+  display: grid;
+  grid-template-rows: repeat(3, max-content);
+  gap: 2vh;
 }
 
+section#booking-content p {
+  color: var(--color-primary);
+}
+
+.booking-content-title {
+  font-size: var(--font-size-section-title);
+  padding: 0 2rem 1rem;
+  font-weight: 300;
+  position: relative;
+}
+
+.booking-content-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  height: 0.3rem;
+  width: 30%;
+  background-color: var(--color-secondary);
+}
+
+.booking-content-paragraph {
+  margin-top: 4rem;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.booking-content-icons {
+  margin-left: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 2rem;
+}
+
+.booking-content-icons-weather,
+.booking-content-icons-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.booking-content-icons-weather p {
+  margin-left: calc(1rem + 0.5vw);
+}
+
+.booking-content-icons-time p {
+  margin-left: calc(1rem + 0.3vw);
+}
+
+.booking-content-icons-time i {
+  margin-left: calc(1rem + 0.3vw);
+}
+
+/* Booking Date Section: */
+
 section#booking-date {
-  background-color: var(--color-third);
   grid-column: column-start 7 / center-end;
 }
+
+/* Villas Section: */
 
 section#villas {
   background-color: var(--color-primary);
   grid-column: container-start / container-end;
 }
 
+/* Motto Section: */
+
 section#motto {
   background-color: var(--color-secondary);
   grid-column: container-start / container-end;
 }
+
+/* Events Content Section: */
 
 section#events-content {
   background-color: var(--color-third);
   grid-column: container-start / column-end 9;
 }
 
+/* Events Date Section: */
+
 section#events-title {
   background-color: var(--color-primary);
   grid-column: column-start 10 / center-end;
 }
+
+/* Gallery Title Section: */
 
 section#gallery-title {
   background-color: var(--color-secondary);
   grid-column: center-start / column-end 1;
 }
 
+/* Gallery Carousel Section: */
+
 section#gallery-carousel {
   background-color: var(--color-third);
   grid-column: column-start 2 / container-end;
 }
+
+/* Features Content Section: */
 
 section#features-content {
   background-color: var(--color-primary);
   grid-column: container-start / column-end 9;
 }
 
+/* Features Title Section: */
+
 section#features-title {
   background-color: var(--color-secondary);
   grid-column: column-start 10 / center-end;
 }
 
+/* Testimonials Section: */
+
 section#testimonials {
   background-color: var(--color-third);
   grid-column: center-start / center-end;
-}
-
-footer#footer {
-  background-color: var(--color-primary);
-  grid-column: container-start / container-end;
 }

@@ -1,3 +1,5 @@
+/* Header: */
+
 header#header {
   grid-column: container-start / container-end;
   background: linear-gradient(
