@@ -5,14 +5,91 @@
   }
 }
 
+@media screen and (max-width: 808px) {
+  section#booking-content {
+    padding: 4vh 3vw;
+    grid-column: center-start / center-end;
+  }
+
+  section#booking-date {
+    padding: 4vh 3vw;
+    grid-column: column-start / center-end;
+    grid-row-gap: 7vh;
+  }
+
+  .booking-content-title {
+    text-align: center;
+  }
+
+  .booking-content-title::after {
+    width: 20%;
+    left: 40%;
+  }
+
+  .booking-content-paragraph {
+    margin-bottom: calc(3rem + 1.5vw);
+    margin-top: calc(1.5rem + 1.5vw);
+  }
+
+  .booking-date-reservation-text {
+    text-align: center;
+  }
+
+  .booking-date-reservation {
+    margin-top: calc(1.5rem + 1.5vw);
+  }
+
+  .display-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flex-column {
+    flex-direction: column;
+  }
+
+  .booking-content-icons-weather {
+    margin-bottom: calc(2rem + 2vw);
+  }
+
+  .booking-date-reservation-text p:last-of-type {
+    margin-bottom: calc(3rem + 0.5vw);
+  }
+}
+
 @media screen and (max-width: 600px) {
   .header-text-paragaph {
     font-size: 2rem;
+  }
+
+  section#booking-date {
+    grid-template-rows: repeat(2, max-content);
+  }
+
+  .booking-content-paragraph {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .booking-date-container-arrival > div,
+  .booking-date-container-departure > div,
+  .booking-date-container-guests > div {
+    padding: 4rem;
+    grid-template-columns: min-content;
   }
 }
 
 @media screen and (max-width: 550px) {
   .header-text-title {
     font-size: calc(3rem + 4vw);
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .booking-date-container {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: auto;
+    grid-row-gap: 4vh;
   }
 }
