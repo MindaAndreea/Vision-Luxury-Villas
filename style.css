@@ -51,6 +51,34 @@ body {
   background-color: var(--color-fourth);
 }
 
+a:link,
+a:visited {
+  color: var(--color-fourth);
+  text-decoration: none;
+  font-size: calc(1rem + 1vw);
+  padding: 1rem 2rem;
+  border-radius: 0.3rem;
+  position: relative;
+  transition: all var(--transition-duration) cubic-bezier(1, 0, 0, 1);
+  z-index: 1;
+}
+
+p {
+  color: white;
+  font-size: calc(1rem + 1vw);
+  font-weight: 300;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 3.5rem;
+}
+
+i {
+  font-size: var(--font-size-section-title);
+  color: var(--color-secondary);
+}
+
 /* grid system */
 
 .container {
@@ -66,14 +94,189 @@ body {
   grid-template-rows: 100vh repeat(8, min-content);
 }
 
-* {
-  font-size: 5rem;
-  /* just for the moment so we can visualize the content better, this will be modified in the future, the background colors will be modified as well, this is only to better understand the grid layout */
+header#header {
+  grid-column: container-start / container-end;
+  background: linear-gradient(
+      var(--color-modified-primary-light),
+      var(--color-modified-primary-light)
+    ),
+    url(img/hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-header#header {
-  background-color: var(--color-primary);
-  grid-column: container-start / container-end;
+.header-main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 6;
+}
+
+.header-main-nav input[type="checkbox"] {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  height: 5rem;
+  width: 5rem;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.header-main-nav-hamburger {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  height: 5rem;
+  width: 5rem;
+  padding: 1rem;
+  background-color: var(--color-secondary);
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* display: grid;
+  place-items: center; */
+}
+
+.header-main-nav-hamburger > div {
+  position: relative;
+  height: 0.3rem;
+  width: 100%;
+  background-color: var(--color-fourth);
+  display: grid;
+  place-items: center;
+  transition: all var(--transition-duration) ease-in-out;
+}
+
+.header-main-nav-hamburger > div::before,
+.header-main-nav-hamburger > div::after {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  width: 60%;
+  height: inherit;
+  background-color: inherit;
+  z-index: 2;
+}
+
+.header-main-nav-hamburger > div::before {
+  left: 0;
+}
+
+.header-main-nav-hamburger > div::after {
+  top: 1rem;
+  right: 0;
+}
+
+.header-main-nav
+  input[type="checkbox"]:checked
+  + .header-main-nav-hamburger
+  > div {
+  transform: rotate(135deg);
+}
+
+.header-main-nav
+  input[type="checkbox"]:checked
+  + .header-main-nav-hamburger
+  > div::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: rotate(270deg);
+}
+
+.header-main-nav
+  input[type="checkbox"]:checked
+  + .header-main-nav-hamburger
+  > div::after {
+  opacity: 0;
+}
+
+.header-main-nav
+  input[type="checkbox"]:checked:hover
+  + .header-main-nav-hamburger
+  > div {
+  transform: rotate(405deg);
+}
+
+.header-main-nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.header-main-nav-menu > div {
+  background-color: var(--color-modified-secondary-dark);
+  height: 200%;
+  width: 200%;
+  display: grid;
+  place-items: center;
+  transform: scaleX(0);
+  transition: all var(--transition-duration) ease-in-out;
+}
+
+.header-main-nav-menu > div > div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.header-main-nav-menu ul li a {
+  color: black;
+}
+
+.header-main-nav input[type="checkbox"]:checked ~ .header-main-nav-menu {
+  visibility: visible;
+}
+
+.header-main-nav input[type="checkbox"]:checked ~ .header-main-nav-menu > div {
+  transform: scaleX(1);
+  transition-duration: 0.5s;
+}
+
+.header-main-nav
+  input[type="checkbox"]:checked
+  ~ .header-main-nav-menu
+  > div
+  > div {
+  opacity: 1;
+}
+
+.header-main-nav-menu ul li a:link,
+.header-main-nav-menu ul li a:visited {
+  z-index: 5;
+  position: relative;
+}
+
+.header-main-nav-menu ul li a:link::before,
+.header-main-nav-menu ul li a:visited::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: scaleY(0);
+  background-color: var(--color-modified-primary-dark);
+  transition: transform var(--transition-duration) ease-in-out;
+}
+
+.header-main-nav-menu ul li a:hover::before,
+.header-main-nav-menu ul li a:active::before {
+  transform: scaleY(1);
 }
 
 section#booking-content {
