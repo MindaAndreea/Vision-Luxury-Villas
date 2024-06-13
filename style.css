@@ -66,7 +66,7 @@ a:visited {
 p {
   color: white;
   font-size: calc(1rem + 1vw);
-  font-weight: 300;
+  font-weight: 200;
 }
 
 li {
@@ -128,7 +128,7 @@ section#booking-content p {
 .booking-content-paragraph {
   margin-top: 4rem;
   padding: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: calc(4rem + 5vw);
 }
 
 .booking-content-icons {
@@ -161,6 +161,129 @@ section#booking-content p {
 
 section#booking-date {
   grid-column: column-start 7 / center-end;
+  padding: var(--padding-section);
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.booking-date-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 2vw;
+  place-items: center;
+  margin-bottom: 3rem;
+}
+
+.booking-date-container p {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.booking-date-container-arrival,
+.booking-date-container-departure,
+.booking-date-container-guests {
+  display: grid;
+  grid-row-gap: 3vh;
+}
+
+.booking-date-container-arrival h5,
+.booking-date-container-departure h5,
+.booking-date-container-guests h5 {
+  font-size: calc(1rem + 1vw);
+  text-align: center;
+  margin-bottom: calc(0.5rem + 0.5vw);
+}
+
+.booking-date-container-arrival > div,
+.booking-date-container-departure > div,
+.booking-date-container-guests > div {
+  background-color: var(--color-secondary);
+  padding: 2rem 4rem;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  place-items: center;
+  position: relative;
+}
+
+.booking-date-container-arrival > div::before,
+.booking-date-container-departure > div::before,
+.booking-date-container-guests > div::before,
+.booking-date-container-arrival > div::after,
+.booking-date-container-departure > div::after,
+.booking-date-container-guests > div::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  border-width: 1.5rem;
+  margin-left: -1.5rem;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.booking-date-container-arrival > div::before,
+.booking-date-container-departure > div::before,
+.booking-date-container-guests > div::before {
+  bottom: 100%;
+  border-color: transparent transparent var(--color-secondary) transparent;
+}
+
+.booking-date-container-arrival > div::after,
+.booking-date-container-departure > div::after,
+.booking-date-container-guests > div::after {
+  top: 100%;
+  border-color: var(--color-secondary) transparent transparent transparent;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.booking-date-reservation {
+  align-self: end;
+}
+
+.booking-date-reservation a {
+  color: var(--color-primary);
+}
+
+.booking-date-reservation-link:link,
+.booking-date-reservation-link:visited {
+  background-color: var(--color-secondary);
+  transition: all 0.2s ease-in-out;
+}
+
+.booking-date-reservation-link:hover,
+.booking-date-reservation-link:active {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  border: 0.1rem var(--color-secondary) solid;
+}
+
+.booking-date-reservation p {
+  color: var(--color-primary);
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.booking-date-reservation-text p:first-of-type {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.booking-date-reservation p:last-of-type {
+  margin-bottom: auto;
+}
+
+.bullet-parag::before {
+  content: "\2022";
+  color: var(--color-primary);
+  display: inline-block;
+  font-size: calc(1.5rem + 2vw);
+  width: 1em;
+  margin-right: 0.5rem;
+  line-height: 1;
 }
 
 /* Villas Section: */
