@@ -56,6 +56,10 @@
   .booking-date-reservation-text p:last-of-type {
     margin-bottom: calc(3rem + 0.5vw);
   }
+
+  section#villas {
+    gap: 0.5rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -78,6 +82,18 @@
     padding: 4rem;
     grid-template-columns: min-content;
   }
+
+  .villas-villa-paragraph {
+    font-size: 2rem;
+    margin: 1.5rem 0.5rem 1.5rem 0.5rem;
+  }
+
+  .villas-villa-links a:first-of-type:link,
+  .villas-villa-links a:first-of-type:visited,
+  .villas-villa-links a:last-of-type:link,
+  .villas-villa-links a:last-of-type:visited {
+    font-size: 1.8rem;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -91,5 +107,18 @@
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: auto;
     grid-row-gap: 4vh;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  section#villas {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  }
+
+  .villas-villa-links a:first-of-type:link,
+  .villas-villa-links a:first-of-type:visited,
+  .villas-villa-links a:last-of-type:link,
+  .villas-villa-links a:last-of-type:visited {
+    font-size: 1.6rem;
   }
 }
