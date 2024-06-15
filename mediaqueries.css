@@ -94,6 +94,10 @@
   .villas-villa-links a:last-of-type:visited {
     font-size: 1.8rem;
   }
+
+  .motto-content-container p {
+    font-size: 1.8rem;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -107,6 +111,16 @@
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: auto;
     grid-row-gap: 4vh;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  section#motto {
+    padding: 5vh;
+  }
+
+  .motto-content-container {
+    text-align: unset;
   }
 }
 

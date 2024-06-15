@@ -442,8 +442,38 @@ section#villas {
 /* Motto Section: */
 
 section#motto {
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   grid-column: container-start / container-end;
+  padding: 10vh;
+}
+
+.motto-content-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.motto-content-container h2 {
+  font-size: var(--font-size-section-title);
+  padding: 0 2rem 1rem;
+  color: var(--color-fourth);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.motto-content-container h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  height: 0.2rem;
+  width: 10%;
+  background-color: var(--color-fourth);
+}
+
+.motto-content-container p {
+  margin-top: 2rem;
 }
 
 /* Events Content Section: */
