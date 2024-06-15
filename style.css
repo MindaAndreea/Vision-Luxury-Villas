@@ -553,11 +553,11 @@ section#events-title {
   place-items: center;
 }
 
-.events-title-container {
+.events-gallery-features-title-container {
   transform: rotate(90deg);
 }
 
-.events-title-container-title {
+.events-gallery-features-title {
   color: var(--color-fourth);
   font-size: var(--font-size-section-title);
   font-weight: 500;
@@ -567,8 +567,16 @@ section#events-title {
 /* Gallery Title Section: */
 
 section#gallery-title {
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   grid-column: center-start / column-end 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  place-items: center;
+}
+
+section#gallery-title h2 {
+  transform: rotate(180deg);
 }
 
 /* Gallery Carousel Section: */

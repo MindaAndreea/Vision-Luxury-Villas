@@ -63,7 +63,9 @@
 }
 
 @media screen and (max-width: 650px) {
-  section#events-content {
+  section#events-content,
+  section#gallery-carousel,
+  section#features-content {
     grid-column: container-start / container-end;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   }
@@ -78,7 +80,7 @@
     font-size: 1.6rem;
   }
 
-  section#events-title .events-title {
+  .events-gallery-features-title {
     display: none;
   }
 }
