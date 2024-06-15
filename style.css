@@ -385,8 +385,6 @@ section#villas {
       var(--color-modified-third-light)
     ),
     url("img/Villas/villa-1.jpg");
-  background-position: center;
-  background-size: cover;
 }
 
 .villas-villa-2 {
@@ -395,8 +393,6 @@ section#villas {
       var(--color-modified-third-light)
     ),
     url("img/Villas/villa-2.jpg");
-  background-position: center;
-  background-size: cover;
 }
 
 .villas-villa-3 {
@@ -405,8 +401,6 @@ section#villas {
       var(--color-modified-third-light)
     ),
     url("img/Villas/villa-3.jpg");
-  background-position: center;
-  background-size: cover;
 }
 
 .villas-villa-4 {
@@ -415,8 +409,6 @@ section#villas {
       var(--color-modified-third-light)
     ),
     url("img/Villas/villa-4.jpg");
-  background-position: center;
-  background-size: cover;
 }
 
 .villas-villa-5 {
@@ -425,8 +417,6 @@ section#villas {
       var(--color-modified-third-light)
     ),
     url("img/Villas/villa-5.jpg");
-  background-position: center;
-  background-size: cover;
 }
 
 .villas-villa-6 {
@@ -435,6 +425,14 @@ section#villas {
       var(--color-modified-third-light)
     ),
     url("img/Villas/villa-6.jpg");
+}
+
+.villas-villa-1,
+.villas-villa-2,
+.villas-villa-3,
+.villas-villa-4,
+.villas-villa-5,
+.villas-villa-6 {
   background-position: center;
   background-size: cover;
 }
@@ -473,21 +471,97 @@ section#motto {
 }
 
 .motto-content-container p {
+  color: var(--color-fourth);
   margin-top: 2rem;
 }
 
 /* Events Content Section: */
 
 section#events-content {
-  background-color: var(--color-third);
   grid-column: container-start / column-end 9;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.events-content-event {
+  padding: var(--padding-section);
+  display: grid;
+  grid-template-areas:
+    "title"
+    "paragraph";
+  grid-row-gap: 4vh;
+  align-items: center;
+  justify-items: start;
+}
+
+.events-content-event h2 {
+  font-size: var(--font-size-section-title);
+  color: var(--color-fourth);
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  line-height: 1.2;
+  place-self: center;
+}
+
+.events-content-event p {
+  letter-spacing: 0.2rem;
+  line-height: 1.4;
+  color: var(--color-fourth);
+  font-weight: 400;
+}
+
+.events-content-event-1 {
+  background: linear-gradient(
+      var(--color-modified-third-light),
+      var(--color-modified-third-light)
+    ),
+    url("img/Events/beach-party.jpg");
+  border-right: 0.2rem solid var(--color-third);
+}
+
+.events-content-event-1-title {
+  grid-area: title;
+}
+
+.events-content-event-1-paragraph {
+  grid-area: paragraph;
+}
+
+.events-content-event-2 {
+  background: linear-gradient(
+      var(--color-modified-third-light),
+      var(--color-modified-third-light)
+    ),
+    url("img/Events/culture-discovery.jpg");
+  border-left: 0.2rem solid var(--color-third);
+}
+
+.events-content-event-1,
+.events-content-event-2 {
+  background-position: center;
+  background-size: cover;
 }
 
 /* Events Date Section: */
 
 section#events-title {
-  background-color: var(--color-primary);
+  background-color: var(--color-third);
   grid-column: column-start 10 / center-end;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  place-items: center;
+}
+
+.events-title-container {
+  transform: rotate(90deg);
+}
+
+.events-title-container-title {
+  color: var(--color-fourth);
+  font-size: var(--font-size-section-title);
+  font-weight: 500;
+  letter-spacing: 0.3rem;
 }
 
 /* Gallery Title Section: */
