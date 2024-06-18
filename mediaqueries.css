@@ -60,6 +60,17 @@
   section#villas {
     gap: 0.5rem;
   }
+
+  footer#footer {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  footer#footer p {
+    margin-bottom: 5rem;
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -154,6 +165,12 @@
     grid-template-columns: auto;
     grid-row-gap: 4vh;
   }
+
+  footer#footer p {
+    margin-bottom: 4rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -163,6 +180,23 @@
 
   .motto-content-container {
     text-align: unset;
+  }
+
+  footer#footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-social {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-social-links:link,
+  .footer-social-links:visited {
+    box-shadow: 0.5rem 0.5rem 2rem 0.5rem var(--color-modified-secondary-light),
+      -0.5rem -0.5rem 2rem 0.5rem var(--color-modified-secondary-light);
+    margin-bottom: 2.5rem;
   }
 }
 
