@@ -83,6 +83,18 @@
   .events-gallery-features-title {
     display: none;
   }
+
+  .gallery-carousel-btn i {
+    font-size: 5rem;
+  }
+
+  .gallery-carousel-navigation {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5rem;
+    height: 10%;
+    margin-bottom: 3rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
