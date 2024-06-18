@@ -70,12 +70,19 @@
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   }
 
-  .events-content-event-1,
-  .events-content-event-2 {
+  section#gallery-carousel {
     border: none;
   }
 
-  .events-content-event p {
+  .events-content-event-1,
+  .events-content-event-2,
+  .features-content-feature-1,
+  .features-content-feature-2 {
+    border: none;
+  }
+
+  .events-content-event p,
+  .features-content-feature p {
     text-align: center;
     font-size: 1.6rem;
   }

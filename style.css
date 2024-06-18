@@ -475,15 +475,17 @@ section#motto {
   margin-top: 2rem;
 }
 
-/* Events Content Section: */
+/* Events Content Section: +  Features Content Section: */
 
-section#events-content {
+section#events-content,
+section#features-content {
   grid-column: container-start / column-end 9;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.events-content-event {
+section#events-content > div,
+section#features-content > div {
   padding: var(--padding-section);
   display: grid;
   grid-template-areas:
@@ -494,7 +496,8 @@ section#events-content {
   justify-items: start;
 }
 
-.events-content-event h2 {
+.events-content-event h2,
+.features-content-feature h2 {
   font-size: var(--font-size-section-title);
   color: var(--color-fourth);
   font-weight: 500;
@@ -503,7 +506,8 @@ section#events-content {
   place-self: center;
 }
 
-.events-content-event p {
+.events-content-event p,
+.features-content-feature p {
   letter-spacing: 0.2rem;
   line-height: 1.4;
   color: var(--color-fourth);
@@ -519,11 +523,17 @@ section#events-content {
   border-right: 0.2rem solid var(--color-third);
 }
 
-.events-content-event-1-title {
+.events-content-event-1-title,
+.events-content-event-2-title,
+.features-content-feature-1-title,
+.features-content-feature-2-title {
   grid-area: title;
 }
 
-.events-content-event-1-paragraph {
+.events-content-event-1-paragraph,
+.events-content-event-2-paragraph,
+.features-content-feature-1-paragraph,
+.features-content-feature-2-paragraph {
   grid-area: paragraph;
 }
 
@@ -544,13 +554,18 @@ section#events-content {
 
 /* Events Date Section: */
 
-section#events-title {
-  background-color: var(--color-third);
-  grid-column: column-start 10 / center-end;
+section#events-title,
+section#gallery-title,
+section#features-title {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   place-items: center;
+}
+
+section#events-title {
+  background-color: var(--color-third);
+  grid-column: column-start 10 / center-end;
 }
 
 .events-gallery-features-title-container {
@@ -569,10 +584,6 @@ section#events-title {
 section#gallery-title {
   background-color: var(--color-primary);
   grid-column: center-start / column-end 1;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  place-items: center;
 }
 
 section#gallery-title h2 {
@@ -583,23 +594,28 @@ section#gallery-title h2 {
 
 section#gallery-carousel {
   grid-column: column-start 2 / container-end;
-  height: 90vh;
+  height: 80vh;
   overflow: hidden;
   border: 0.2rem solid var(--color-secondary);
   position: relative;
 }
 
-div.gallery-carousel-image-container {
+.gallery-carousel-image-container {
   height: 100%;
   width: 100%;
   position: relative;
+}
+
+.gallery-carousel-image-container img {
+  height: 100%;
+  width: 100%;
 }
 
 .gallery-carousel-image-container-list {
   position: relative;
   height: 100%;
   width: 100%;
-  transition: transform ease-in-out;
+  transition: transform var(--transition-duration) ease-in-out;
 }
 
 .gallery-carousel-image-container-list-item {
@@ -663,9 +679,39 @@ div.gallery-carousel-image-container {
 
 /* Features Content Section: */
 
-section#features-content {
-  background-color: var(--color-primary);
-  grid-column: container-start / column-end 9;
+.features-content-feature-1 h2,
+.features-content-feature-1 p,
+.features-content-feature-2 h2,
+.features-content-feature-2 p {
+  color: black;
+}
+
+.features-content-feature h2 {
+  text-align: center;
+}
+
+.features-content-feature-1 {
+  background: linear-gradient(
+      var(--color-modified-secondary-light),
+      var(--color-modified-secondary-light)
+    ),
+    url("img/Features/cocktail.jpg");
+  border-right: 0.2rem solid var(--color-secondary);
+}
+
+.features-content-feature-2 {
+  background: linear-gradient(
+      var(--color-modified-secondary-light),
+      var(--color-modified-secondary-light)
+    ),
+    url("img/Features/surfing.jpg");
+  border-left: 0.2rem solid var(--color-secondary);
+}
+
+.features-content-feature-1,
+.features-content-feature-2 {
+  background-position: center;
+  background-size: cover;
 }
 
 /* Features Title Section: */
@@ -673,6 +719,10 @@ section#features-content {
 section#features-title {
   background-color: var(--color-secondary);
   grid-column: column-start 10 / center-end;
+}
+
+.features-container h2 {
+  color: black;
 }
 
 /* Testimonials Section: */
